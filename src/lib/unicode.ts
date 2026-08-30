@@ -8,7 +8,7 @@
 //   3. A Cyrillic letter is only a homoglyph if the word around it is Latin.
 //
 // Without these, cleaning would corrupt family emoji, Persian, Hindi and every
-// line of genuine Russian prose — a much worse outcome than a missed mark.
+// line of genuine Russian prose - a much worse outcome than a missed mark.
 
 import {
   BIDI,
@@ -421,7 +421,7 @@ function buildFindings(marks: MarkSpan[], nfcChanged: boolean, source: string): 
   return findings;
 }
 
-/** Inspect without modifying — same scan, every category left in place. */
+/** Inspect without modifying - same scan, every category left in place. */
 export function inspectText(input: string): TextResult {
   const inspectOptions: TextOptions = {
     tagChars: false,

@@ -37,7 +37,7 @@ const BEHAVIOUR_ROWS: Row[] = [
   {
     key: "typography",
     label: "Rewrite smart typography",
-    hint: "Cosmetic — curly quotes and em dashes are not watermarks",
+    hint: "Cosmetic: curly quotes and em dashes are not watermarks",
   },
 ];
 

@@ -33,7 +33,7 @@ export interface Finding {
 /**
  * Something invisible that carried actual data. Tag characters and variation
  * selectors can smuggle arbitrary bytes through text that looks completely
- * clean — decoding them is usually more interesting than the removal itself.
+ * clean - decoding them is usually more interesting than the removal itself.
  */
 export interface HiddenPayload {
   kind: "tag-chars" | "variation-selectors";

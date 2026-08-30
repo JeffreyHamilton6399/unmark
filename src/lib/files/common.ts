@@ -1,7 +1,7 @@
 // Shared plumbing for the file layer.
 //
 // Every stripper works on bytes and rebuilds the container by hand. That keeps
-// the image data bit-for-bit identical — unlike a canvas re-encode, which
+// the image data bit-for-bit identical - unlike a canvas re-encode, which
 // scrubs metadata by throwing the original pixels away and generating new ones.
 
 import type { Finding, Severity } from "../types";
@@ -92,7 +92,7 @@ export function mergeFindings(list: Finding[]): Finding[] {
 /**
  * Signatures for the generation-parameter blocks that image tools bury in text
  * metadata. Finding one of these is usually the most informative thing in a
- * report — it names the tool and often preserves the entire prompt.
+ * report - it names the tool and often preserves the entire prompt.
  */
 export const GENERATOR_KEYS: Record<string, string> = {
   parameters: "Stable Diffusion / Automatic1111 generation parameters",

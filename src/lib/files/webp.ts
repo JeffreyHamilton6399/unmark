@@ -1,5 +1,5 @@
 // WebP is a RIFF container. Metadata sits in its own EXIF/XMP chunks, and the
-// VP8X header carries flag bits announcing which of them exist — so removing a
+// VP8X header carries flag bits announcing which of them exist - so removing a
 // chunk means clearing its bit too, or decoders go looking for something gone.
 
 import type { Finding } from "../types";
@@ -51,7 +51,7 @@ export function stripWebp(bytes: Uint8Array, options: FileOptions) {
     } else if (fourcc === "ICCP") {
       if (options.keepColorProfile) {
         findings.push({
-          ...finding("webp:icc", "ICC colour profile", "Kept — removing it shifts colour.", "low"),
+          ...finding("webp:icc", "ICC colour profile", "Kept: removing it shifts colour.", "low"),
           removed: false,
         });
       } else {

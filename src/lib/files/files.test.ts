@@ -20,7 +20,7 @@ function pngChunk(type: string, data: Uint8Array): Uint8Array {
   new DataView(out.buffer).setUint32(0, data.length);
   for (let i = 0; i < 4; i++) out[4 + i] = type.charCodeAt(i);
   out.set(data, 8);
-  return out; // CRC left zero — the stripper copies chunks, it doesn't verify them
+  return out; // CRC left zero, the stripper copies chunks, it doesn't verify them
 }
 
 function buildPng(extra: Uint8Array[]): Uint8Array {

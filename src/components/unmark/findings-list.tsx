@@ -40,7 +40,7 @@ export function FindingsList({
           className,
         )}
       >
-        <Check className="size-4 shrink-0 text-emerald-600 dark:text-emerald-400" />
+        <Check className="size-4 shrink-0 text-lime-600 dark:text-lime-400" />
         <span>{emptyMessage}</span>
       </div>
     );

@@ -76,7 +76,7 @@ export const EXOTIC_SPACE: Record<number, string> = {
 
 /**
  * Letters from other scripts that render identically to ASCII. Only applied
- * inside words that already contain ASCII letters — see the mixed-script guard
+ * inside words that already contain ASCII letters - see the mixed-script guard
  * in unicode.ts. Without that guard this table would mangle genuine Russian
  * or Greek text, which is a far worse failure than leaving a homoglyph in.
  */
@@ -105,7 +105,7 @@ for (const cp of Object.keys(CONFUSABLES)) {
 }
 
 /**
- * Stylistic substitutions. These are NOT watermarks — they're ordinary
+ * Stylistic substitutions. These are NOT watermarks - they're ordinary
  * typography that happens to correlate with machine-written prose. Off by
  * default, and labelled as cosmetic in the UI, because removing them changes
  * how the text reads without removing any signal.
@@ -166,7 +166,7 @@ export function foldStyledLatin(cp: number): string | null {
   return null;
 }
 
-/** Tag characters — a full invisible ASCII alphabet at U+E0000. */
+/** Tag characters - a full invisible ASCII alphabet at U+E0000. */
 export function isTagChar(cp: number): boolean {
   return cp >= 0xe0000 && cp <= 0xe007f;
 }
@@ -207,7 +207,7 @@ export const CATEGORY_META: Record<
   bidi: {
     label: "Bidirectional controls",
     detail:
-      "Reorder how text renders without changing its bytes — the basis of Trojan Source attacks.",
+      "Reorder how text renders without changing its bytes, the basis of Trojan Source attacks.",
     severity: "high",
   },
   controls: {
@@ -235,7 +235,7 @@ export const CATEGORY_META: Record<
   typography: {
     label: "Smart typography",
     detail:
-      "Curly quotes, em dashes, ellipses. Cosmetic, not a watermark — off by default.",
+      "Curly quotes, em dashes, ellipses. Cosmetic, not a watermark, off by default.",
     severity: "low",
   },
 };

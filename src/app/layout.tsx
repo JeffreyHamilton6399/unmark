@@ -1,49 +1,39 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Atkinson_Hyperlegible, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from "@/components/theme-provider";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const sans = Atkinson_Hyperlegible({
+  variable: "--font-app-sans",
+  weight: ["400", "700"],
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const mono = JetBrains_Mono({
+  variable: "--font-app-mono",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Unmark — Find and remove hidden marks in text and files",
+  title: "Unmark: find hidden characters and metadata",
   description:
-    "Reveal invisible characters, hidden messages and embedded metadata, then strip them out — 100% in your browser. No uploads, no sign-up, free.",
-  keywords: [
-    "zero-width characters",
-    "invisible characters",
-    "hidden text",
-    "unicode cleaner",
-    "metadata",
-    "C2PA",
-    "EXIF",
-    "watermark",
-    "privacy",
-  ],
+    "Zero-width characters, odd Unicode lookalikes, EXIF, C2PA. Unmark shows what is sitting in a piece of text or a file, and takes it out if you want it gone.",
   authors: [{ name: "Jeffrey Hamilton" }],
   icons: {
     icon: "/icon.svg",
   },
   openGraph: {
-    title: "Unmark — Find and remove hidden marks",
+    title: "Unmark",
     description:
-      "Reveal invisible characters and embedded metadata, then strip them out — right in your browser. No uploads.",
+      "See the invisible characters and metadata in text and files, then strip them.",
     type: "website",
   },
   twitter: {
     card: "summary",
-    title: "Unmark — Find and remove hidden marks",
+    title: "Unmark",
     description:
-      "Reveal invisible characters and embedded metadata, then strip them out — right in your browser.",
+      "See the invisible characters and metadata in text and files.",
   },
 };
 
@@ -64,7 +54,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
+        className={`${sans.variable} ${mono.variable} antialiased bg-background text-foreground`}
       >
         <ThemeProvider
           attribute="class"

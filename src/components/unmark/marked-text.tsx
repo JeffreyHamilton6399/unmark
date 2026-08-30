@@ -4,7 +4,7 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 import type { MarkCategory, MarkSpan } from "@/lib/types";
 
-/** Short chip labels — the whole point is that these characters render as nothing. */
+/** Short chip labels - the whole point is that these characters render as nothing. */
 const CHIP: Record<MarkCategory, string> = {
   "tag-chars": "TAG",
   "variation-selectors": "VS",

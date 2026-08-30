@@ -6,7 +6,7 @@ interface LogoProps extends React.SVGProps<SVGSVGElement> {
 }
 
 /**
- * A page whose hidden line is being swept away — two solid lines of real text,
+ * A page whose hidden line is being swept away - two solid lines of real text,
  * one dotted line standing for the invisible marks, and a stroke through it.
  */
 export function Logo({ size = 22, className, ...props }: LogoProps) {

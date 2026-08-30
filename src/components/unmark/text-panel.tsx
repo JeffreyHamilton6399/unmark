@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Check, Copy, Download, Eye, KeyRound, Sparkles, Trash2 } from "lucide-react";
+import { Check, Copy, Download, Eraser, Eye, KeyRound, Trash2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { cn } from "@/lib/utils";
@@ -12,7 +12,7 @@ import { MarkedText } from "./marked-text";
 
 type View = "clean" | "inspect";
 
-/** Decoded hidden messages get their own callout — they are the headline result. */
+/** Decoded hidden messages get their own callout - they are the headline result. */
 function PayloadCallout({ payloads }: { payloads: HiddenPayload[] }) {
   const useful = payloads.filter((p) => p.printable && p.decoded.trim().length > 0);
   if (useful.length === 0) return null;
@@ -118,7 +118,7 @@ export function TextPanel({ options }: { options: TextOptions }) {
             <div className="flex items-center gap-0.5 rounded-md bg-background p-0.5">
               {(
                 [
-                  { id: "clean" as const, label: "Cleaned", icon: Sparkles },
+                  { id: "clean" as const, label: "Cleaned", icon: Eraser },
                   { id: "inspect" as const, label: "Inspect", icon: Eye },
                 ]
               ).map((tab) => (
@@ -155,7 +155,7 @@ export function TextPanel({ options }: { options: TextOptions }) {
                 onClick={handleCopy}
                 disabled={!result.text}
               >
-                {copied ? <Check className="size-3 text-emerald-500" /> : <Copy className="size-3" />}
+                {copied ? <Check className="size-3 text-lime-600 dark:text-lime-400" /> : <Copy className="size-3" />}
                 {copied ? "Copied" : "Copy"}
               </Button>
             </div>

@@ -121,7 +121,7 @@ export function FilePanel({
   const firstRun = React.useRef(true);
   const itemsRef = React.useRef(items);
 
-  // Synced in its own effect — assigning during render trips the React rules
+  // Synced in its own effect - assigning during render trips the React rules
   // and can hand a stale list to the re-run below.
   React.useEffect(() => {
     itemsRef.current = items;
@@ -205,7 +205,7 @@ export function FilePanel({
           </p>
           <p className="flex items-center gap-1.5 text-[11px] text-muted-foreground">
             <ShieldCheck className="size-3.5" />
-            Nothing is uploaded — this runs entirely in your browser.
+            Nothing is uploaded, this runs entirely in your browser.
           </p>
         </div>
         <input
@@ -291,7 +291,7 @@ export function FilePanel({
                     ) : item.status === "error" ? (
                       <AlertCircle className="size-4 text-amber-500" />
                     ) : marks > 0 ? (
-                      <ShieldCheck className="size-4 text-emerald-600 dark:text-emerald-400" />
+                      <ShieldCheck className="size-4 text-lime-600 dark:text-lime-400" />
                     ) : (
                       <Check className="size-4 text-muted-foreground" />
                     )}

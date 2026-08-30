@@ -1,5 +1,5 @@
 // PNG is a stream of length-prefixed chunks. Rebuilding the stream without the
-// metadata chunks leaves IDAT — the actual compressed pixels — completely
+// metadata chunks leaves IDAT - the actual compressed pixels - completely
 // untouched, so the output is byte-identical image data with the extras gone.
 
 import type { Finding } from "../types";
@@ -55,7 +55,7 @@ export function stripPng(bytes: Uint8Array, options: FileOptions) {
     const length = u32(bytes, offset);
     const type = ascii(bytes, offset + 4, 4);
     const total = 12 + length;
-    if (offset + total > bytes.length) break; // truncated file — stop cleanly
+    if (offset + total > bytes.length) break; // truncated file, stop cleanly
 
     const chunk = bytes.subarray(offset, offset + total);
     const data = bytes.subarray(offset + 8, offset + 8 + length);
@@ -118,7 +118,7 @@ export function stripPng(bytes: Uint8Array, options: FileOptions) {
         ...finding(
           "png:iccp",
           "ICC colour profile",
-          "Kept — removing it shifts colour. Profiles can name the originating device.",
+          "Kept: removing it shifts colour. Profiles can name the originating device.",
           "low",
         ),
         removed: false,

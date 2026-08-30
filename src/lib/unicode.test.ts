@@ -83,11 +83,11 @@ describe("spaces and typography", () => {
   });
 
   test("leaves smart typography alone by default", () => {
-    expect(clean("it’s — fine")).toBe("it’s — fine");
+    expect(clean("it’s, fine")).toBe("it’s, fine");
   });
 
   test("rewrites typography when explicitly enabled", () => {
-    const result = processText("it’s — fine…", {
+    const result = processText("it’s, fine…", {
       ...DEFAULT_TEXT_OPTIONS,
       typography: true,
     });

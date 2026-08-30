@@ -20,7 +20,7 @@ export function Header() {
           asChild
           variant="outline"
           size="sm"
-          className="h-7 gap-1.5 rounded-full border-rose-200 px-3 text-xs font-medium text-rose-600 hover:bg-rose-50 hover:text-rose-700 dark:border-rose-500/30 dark:text-rose-400 dark:hover:bg-rose-950/40 dark:hover:text-rose-300"
+          className="h-7 gap-1.5 px-2 text-xs font-normal text-muted-foreground hover:bg-transparent hover:text-foreground"
         >
           <a
             href="https://buymeacoffee.com/jeffreyscof"

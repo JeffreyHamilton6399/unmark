@@ -1,6 +1,6 @@
 // JPEG metadata lives in APPn marker segments ahead of the compressed scan.
 // Dropping those segments and copying the scan through verbatim re-quantises
-// nothing — the image is the same image, minus the attached records.
+// nothing - the image is the same image, minus the attached records.
 
 import type { Finding } from "../types";
 import { type FileOptions, ascii, concat, finding, mergeFindings } from "./common";
@@ -18,7 +18,7 @@ export function stripJpeg(bytes: Uint8Array, options: FileOptions) {
   let offset = 2;
 
   while (offset + 4 <= bytes.length) {
-    if (bytes[offset] !== 0xff) break; // desynchronised — bail and keep the rest
+    if (bytes[offset] !== 0xff) break; // desynchronised, bail and keep the rest
     const marker = bytes[offset + 1];
 
     if (marker === 0xd9) {
@@ -95,7 +95,7 @@ export function stripJpeg(bytes: Uint8Array, options: FileOptions) {
             ...finding(
               "jpeg:icc",
               "ICC colour profile",
-              "Kept — removing it shifts colour. Profiles can name the originating device.",
+              "Kept: removing it shifts colour. Profiles can name the originating device.",
               "low",
             ),
             removed: false,
