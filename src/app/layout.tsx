@@ -1,12 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import { Atkinson_Hyperlegible, JetBrains_Mono } from "next/font/google";
+import { Inter_Tight, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from "@/components/theme-provider";
 
-const sans = Atkinson_Hyperlegible({
+const sans = Inter_Tight({
   variable: "--font-app-sans",
-  weight: ["400", "700"],
   subsets: ["latin"],
 });
 
